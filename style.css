@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+
+*{
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor:auto;
+    color: white;
+    font-family: 'Roboto';
+
+    }
+    html{
+    /* ratio of font size for responsiveness */
+    font-size: calc(1vh + 0.9vw);
+    font-style: normal;
+    overflow: hidden;
+    }
+    .screen-rotate{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width:100vw;
+        height: 100vh;
+        z-index:1111111;
+    }
+    .rotate-img{
+       width: 100%;
+       height: 100%;
+       object-fit: contain;
+    }
+
+
+    .main{
+        width: 100vw;
+        height: 100vh; 
+        background:url(./assets/images/shutterstock_1476548528.webp),rgba(0, 0, 0, 0.1);
+        background-blend-mode: darken;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    ul{
+        list-style: none;
+        height: max-content;
+        display: flex;
+        padding-bottom: 1rem;
+        border-bottom: 0.1rem solid white;
+    }
+    li{
+        display: inline-block;
+        margin: 1rem;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        text-align: left;
+    }
+    nav{
+        width: 100%;
+        height: fit-content;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    h1{
+        position: absolute;
+        top: 30%;
+        left: 3%;
+        font-size: 3.5rem;
+    }
+
+    .btn{
+        position: absolute;
+        background:transparent;
+        border:0.1rem solid white;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        bottom: 30%;
+        left: 3%;
+    }
+
+    .card{
+        position: absolute;
+        padding: 1rem;
+        max-width:16rem;
+
+        background: rgba(255, 255, 255, 0.56);
+    }
+    h4{
+        color: black    ;
+    }
+    p
+    {
+        color: rgb(14, 49, 113);
+    }
+    .icon{
+        background: rgb(255, 255, 255);
+        width: fit-content;
+        padding: 0.5rem;
+        border-radius:0.5rem;
+        margin: 0.2rem 0;
+    }
+    i{
+        font-size:2rem;
+        color: black;
+    }
+    .point_1,.point_2{
+        position: relative;
+        border-radius: 50%;
+        position: absolute;
+        
+        z-index: 2;
+        cursor: pointer;
+    }
+    .point_1{
+        right:35%;
+        top: 40%;
+    }
+    .point_2{
+        right: 50%;
+        bottom: 10%;
+    }
+    .line{
+        display: none;
+        position: absolute;
+        content: " ";
+        width: 4rem;
+        height: 0.1rem;
+        top: 50%;
+        left:1.88rem;
+        background: white;
+        z-index:1;
+        transform: scale(0,0);
+        transition: all .35s ease-in-out;
+    }
+    .card_1{
+        display: none;
+        right:-20rem;
+        top:-5rem;
+    }
+
+    .point_1:hover > .line,.point_1:hover > .card_1 , .point_2:hover > .line,.point_2:hover > .card_1{
+        display: block;
+        transform: scale(1,1);
+    }
+
+    /* responsiveness */
+    
+    @media screen and (max-aspect-ratio:1/1) {
+        .screen-rotate {
+            display: block;
+        }
+        .main{
+            display: none;
+        }
+    }
+    .btn_ripple {
+        border: none;
+        outline: none;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: block;
+        background-color: #12a7e7;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 18px;
+        cursor: pointer;
+        border: 1px solid #fff;
+    
+        animation-name: ripple;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+    }
+    
+    
+    @keyframes ripple {
+        0% {
+            box-shadow: 0 0 0 0 #fff4, 0 0 0 0 #fff4;
+        }
+    
+        80% {
+            box-shadow: 0 0 0 20px #fff0, 0 0 0 40px #fff0;
+        }
+    
+        100% {
+            box-shadow: 0 0 0 0 #fff0, 0 0 0 0 #fff0;
+        }
+    }
